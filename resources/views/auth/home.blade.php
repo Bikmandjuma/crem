@@ -1,4 +1,4 @@
-@extends('layouts.auth.dashboard')
+@extends('layouts.Auth.dashboard')
 @section('content')
 <br>
 <div class="container">
