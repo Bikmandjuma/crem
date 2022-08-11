@@ -1,12 +1,12 @@
 @extends('Pages.cover')
 @section('content')
 @php
-use App\Models\order;
+use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 @endphp
 <?php
     $cust_id=auth()->guard('customer')->user()->id;
-    $orders=order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
+    $orders=Order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
     $count_order=collect($orders)->count();
 ?>
 
