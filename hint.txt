@@ -1,0 +1,45 @@
+				   @foreach($item as $product)
+                                        <div class="product">
+                                            <div class="product-img">
+                                                <img src="{{URL::to('/')}}/images/product/{{$product->image}}" alt="">
+                                                <div class="product-label">
+                                                    <span class="new">NEW</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-body">
+                                                <h3 class="product-name"><a href="#">{{$product->name}} &nbsp;&nbsp;{{$product->store}} items</a></h3>
+                                                <h4 class="product-price">{{$product->price}} frw</h4>
+                                            
+                                                <div class="product-btns">
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                            </div>
+                                        </div>
+                                        <!-- /product -->
+                                        @endforeach 				     
+				==========================================================================================	    
+			
+				    @foreach($item as $product)
+                                        <div class="product">
+                                            <div class="product-img">
+                                                <img src="{{URL::to('/')}}/images/product/{{$product->image}}" alt="">
+                                                <div class="product-label">
+                                                    <span class="sale">{{$product->store}} items</span>
+                                                    <span class="new">NEW</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-body">
+                                                <h3 class="product-name"><a href="#">{{$product->name}}</a></h3>
+                                                <h4 class="product-price">{{$product->price}}</h4>
+                                                <div class="product-btns">
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                            </div>
+                                        </div>
+                                        @endforeach
