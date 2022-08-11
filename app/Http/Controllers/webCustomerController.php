@@ -28,15 +28,15 @@ class webCustomerController extends Controller
     public function CreateAccount(Request $request){
         $request->validate([
             'name' => 'required|string|max:255',
-            'emails' => 'required|email|unique:customer_accounts',
-            'passwords' => 'required|min:8|confirmed',
+            'email' => 'required|email|unique:customer_accounts',
+            'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
 
         CustomerAccount::create([
             'name' => $request->name,
-            'email' => $request->emails,
-            'password' => Hash::make($request->passwords),
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
         
         if (auth()->guard('customer')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
