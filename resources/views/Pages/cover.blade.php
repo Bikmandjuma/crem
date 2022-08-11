@@ -53,7 +53,7 @@ use App\Models\Order;
 
     </style>
 </head>
-<body style="overflow:auto;">
+<body>
 
 <div id="mySidepanel" class="sidepanel">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
