@@ -1,5 +1,5 @@
 @php
-use App\Models\order;
+use App\Models\Order;
 @endphp
 <!DOCTYPE html>
 <html>
@@ -60,7 +60,7 @@ use App\Models\order;
 @auth('customer')
   <?php
   $cust_id=auth()->guard('customer')->user()->id;
-  $orders=order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
+  $orders=Order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
   $count_order=collect($orders)->count();
   ?>
 
@@ -148,7 +148,7 @@ use App\Models\order;
                             @auth('customer')
                                 <?php
                                     $cust_id=auth()->guard('customer')->user()->id;
-                                    $orders=order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
+                                    $orders=Order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
                                     $count_order=collect($orders)->count();
                                 ?>
                                 <div class="openbtn" onclick="openNav()">

@@ -87,18 +87,18 @@
 
                     <span class="text-danger"> @error('email') {{ $message }}@enderror</span>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="email" value="{{old('email')}}" placeholder="Email">
+                        <input type="text" class="form-control" name="emails" value="{{old('email')}}" placeholder="Email">
                     
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
-                        @error('password') {{ $message }}@enderror                       
+                        <input type="password" class="form-control" name="passwords" placeholder="Password">
+                        <span style="color:red;">@error('password') {{ $message }}@enderror</span>                       
                     </div>
 
                     <div class="form-group">
                         <input type="password" class="form-control" name="password_confirmation" placeholder="Re_enter password">
-                        @error('password_confirmation') {{ $message }}@enderror                       
+                        <span style="color:red;">@error('password_confirmation') {{ $message }}@enderror</span>                     
                     </div>
 
                     <div class="row">
