@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\product;
-use App\Models\order;
+use App\Models\Order;
 
 class webCustomerController extends Controller
 {
@@ -64,10 +64,10 @@ class webCustomerController extends Controller
     public function booking($id,$price){
         $cust_id=auth()->guard('customer')->user()->id;
         $one=1;
-        $booking=order::all()->where('product_id',$id)->where('customer_id',$cust_id);
+        $booking=Order::all()->where('product_id',$id)->where('customer_id',$cust_id);
         $counts=collect('$booking')->count();
         if ($counts != 0) {
-            order::create([
+            Order::create([
                 'customer_id'=>$cust_id,
                 'product_id'=>$id,
                 'product_counts'=>$one,
@@ -103,7 +103,7 @@ class webCustomerController extends Controller
     }
 
     public function CancelOrder($id){
-        order::find($id)->delete();
+        Order::find($id)->delete();
         return back()->with('CancelOrder','order cancelled !');
     }
 }

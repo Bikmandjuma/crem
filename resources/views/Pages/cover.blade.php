@@ -1,5 +1,5 @@
 @php
-use App\Models\order;
+use App\Models\Order;
 @endphp
 <!DOCTYPE html>
 <html>
@@ -60,7 +60,7 @@ use App\Models\order;
 @auth('customer')
   <?php
   $cust_id=auth()->guard('customer')->user()->id;
-  $orders=order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
+  $orders=Order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
   $count_order=collect($orders)->count();
   ?>
 
@@ -138,7 +138,7 @@ use App\Models\order;
                                 <span class=""><i class="fa fa-user"></i>&nbsp;Hello,&nbsp;<b>{{auth()->guard('customer')->user()->name}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-lock"></i>&nbsp;<a href="{{route('customerlogout')}}">Logout</a></span>  
                             @else
                                 <ul>
-                                    <li  align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i> Login / Sing up</a></li>
+                                    <li  align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i> Login / Sign up</a></li>
                                 </ul>
                             @endauth
                         </div>
@@ -148,7 +148,7 @@ use App\Models\order;
                             @auth('customer')
                                 <?php
                                     $cust_id=auth()->guard('customer')->user()->id;
-                                    $orders=order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
+                                    $orders=Order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
                                     $count_order=collect($orders)->count();
                                 ?>
                                 <div class="openbtn" onclick="openNav()">
