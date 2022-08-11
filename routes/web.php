@@ -69,7 +69,7 @@ Route::post('password/email',ForgotPasswordController::class);
 Route::post('password/code/check',CodeCheckController::class);
 Route::post('password/reset',ResetPasswordController::class);
 
-Route::get('login','webAuthController@getLogin')->name('Login');
+// Route::get('login','webAuthController@getLogin')->name('Login');
 Route::post('login', 'webAuthController@postLogin')->name('adminLoginPost');
 Route::post('admin/logout', 'webAuthController@logout')->name('adminLogout');
 

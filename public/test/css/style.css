@@ -24,7 +24,7 @@ body{
 /********* Start Header ***********/
 .main_header{border-top:2px solid #df001a;}
 .logo{ padding:12px 0px 0px;}
-.btn_search{ background:#df001a !important; color:#FFF;}
+.btn_search{background:#df001a !important; color:#FFF;height:34px;}
 .btn_search:hover, .btn_search:active, .btn_search:focus{ background:#bb0016; color:#FFF;}
 .form-top{ margin-top:50px;}
 .form-control{ border-radius:2px; margin:0px auto 4px;}

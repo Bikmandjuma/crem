@@ -195,7 +195,11 @@ use App\Models\Order;
             <li><a href="#!">Category name</a></li>
         </ul>
       </li>
+      @auth('customer')
+      <li><a href="{{url('/customer/dashboard')}}">New ArivalProducts</a></li>
+      @else
       <li><a href="{{url('/')}}">New ArivalProducts</a></li>
+      @endauth
       <li><a href="#!">Customer Services</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Branches &nbsp;
@@ -204,9 +208,7 @@ use App\Models\Order;
             <li><a href="#!">branch name</a></li>
         </ul>
       </li>
-      @auth('customer')
-      <li><a href="{{url('/customer/dashboard')}}">New ArivalProducts</a></li>
-      @endauth
+      
     </ul>
   </div>
 </nav>
