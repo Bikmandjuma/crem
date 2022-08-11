@@ -60,7 +60,7 @@
                         <div class="row">
                             
                             <div class="col-md-4">
-                                <button type="submit" name="login" class="btn btn-primary btn-block" id="loginbtn">Login</button>
+                                <button type="submit" name="login" class="btnauth btn-primary" id="loginbtn">Login</button>
                             </div>
                             <div class="col-md-4">
                                 <a href="#" class="float-right">Forgot password</a>
@@ -104,7 +104,7 @@
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
-                            <button type="submit" name="register" class="btn btn-primary btn-block" id="loginbtn">Register</button>
+                            <button type="submit" name="submit" id="registerbtn" class="btnauth btn-primary">Register</button>
                         </div>
                         <div class="col-md-4">
                             <a href="#" class="float-right" id="signin" onclick="showloginformfn()">Already have an account.</a>
@@ -138,6 +138,11 @@
             document.getElementById('registerform').style.display='none';          
         }
 
+        $(document).ready(function() {
+          $('#loginbtn').on('click touchstart', function() {
+            window.location.href = "/url";
+          });
+        });
     </script>
 @endsection
 

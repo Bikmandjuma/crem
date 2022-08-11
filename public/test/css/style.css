@@ -117,7 +117,8 @@ margin:2px 5px 5px; text-decoration:none; color:#FFF; background:#df001a;}
 /****** Start Slier Part **********/
 .slider{ height:300px;}
 .slider-padding{padding:150px 0px 0px 100px;}
-.btn{ background:#df001a; color:#FFF; padding:6px 20px; font-size:16px; 
+.btnauth{padding:5px;border-radius:10px;font-size:15px;}
+.btn{background:#df001a; color:#FFF; padding:6px 20px; font-size:16px; 
 text-decoration:none; border-radius:3px; text-shadow:none; float:left;}
 .btn:hover{ background:#bb0016; color:#FFF;}
 @media only screen and (min-width:320px) and (max-width:480px){ 

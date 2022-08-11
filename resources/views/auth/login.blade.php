@@ -1,6 +1,4 @@
-@php
-use App\Models\Order;
-@endphp
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,59 +51,14 @@ use App\Models\Order;
 
     </style>
 </head>
-<body style="overflow:auto;">
-
-<div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-@auth('customer')
-  <?php
-  $cust_id=auth()->guard('customer')->user()->id;
-  $orders=Order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
-  $count_order=collect($orders)->count();
-  ?>
-
-  @if ($count_order == 0)
-      <a href="#"><h2>Your cart is {{$count_order}}</h2></a>
-      <a href="#"><hr></a>
-      <a href="#"><h3>No product in your cart </h3></a>
-      <hr>
-       <br>
-       <div class="row">
-         <div class="col-md-12 text-center">
-            <a href="{{route('ViewOrder')}}"><button class="btn btn-danger text-white">SHOPPING CART</button></a> 
-         </div>
-       </div>
-  @else
-      <a href="#"><h2>Your cart </h2></a>
-      <a href="#"><hr></a>
-      <a href="#"><h3>Your cart is {{$count_order}}</h3></a>
-     <hr>
-     <br>
-     <div class="row">
-       <div class="col-md-12 text-center">
-          <a href="{{route('ViewOrder')}}"><button class="btn btn-danger text-white">SHOPPING CART</button></a> 
-       </div>
-     </div>
-     <br>
-     <div class="row">
-       <div class="col-md-12 text-center">
-          <a href="#"><button class="btn btn-danger text-white">PAY NOW</button></a>
-       </div>
-     </div>
-  @endif
-@endauth
-</div>
+<body>
 <!--end of sidebar of orders-->
 <div class="container-fluid">
 <div class="main_shadow">
 <!-- Start Header -->
 <div class="row main_header">
     <div class="col-md-3 col-sm-3 col-xs-12 logo" align="center">
-        @auth('customer')
-        <a href="http://www.freetimelearning.com/" target="_blank"><img src="{{URL::to('/')}}/images/logo.png" class="img-responsive" alt="Logo"></a>               
-        @else
-        <a href="http://www.freetimelearning.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>                   
-        @endauth
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>                   
     </div>
     <div class="col-md-9 col-sm-9 col-xs-12">
         <div class="row">
@@ -134,31 +87,17 @@ use App\Models\Order;
                 <div class="row" align="center">
                     <div class="col-md-7 col-sm-7 col-xs-12">
                         <div class="header-right-bottom">
-                            @auth('customer')
-                                <span class=""><i class="fa fa-user"></i>&nbsp;Hello,&nbsp;<b>{{auth()->guard('customer')->user()->name}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-lock"></i>&nbsp;<a href="{{route('customerlogout')}}">Logout</a></span>  
-                            @else
-                                <ul>
-                                    <li  align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i> Login / Sing up</a></li>
+                        
+                            <ul>
+                                <li  align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i> Login / Sign up</a></li>
                                 </ul>
-                            @endauth
                         </div>
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-12">
                         <div class="header-right-bottom">
-                            @auth('customer')
-                                <?php
-                                    $cust_id=auth()->guard('customer')->user()->id;
-                                    $orders=Order::all()->where('customer_id',$cust_id)->where('payment_checkout',null);
-                                    $count_order=collect($orders)->count();
-                                ?>
-                                <div class="openbtn" onclick="openNav()">
-                                    <a href="#"><i class="fa fa-cart-plus cart_size"></i> &nbsp;
-                                    <span class="badge badge-danger" style="margin-top:-30px;margin-left:-10px;"><?php echo $count_order;?></span><p><i class="fa fa-hand-o-right fa-2x" aria-hidden="true" id="clicktoorder"></i>Shopping cart/Orders</p></a>
-                                </div>
-                            @else
-                                <i class="fa fa-cart-plus cart_size"></i> &nbsp; 
-                                <span class="badge badge-danger" style="margin-top:-30px;margin-left:-10px;">0</span><p>Shopping cart</p>
-                            @endauth
+                      
+                            <i class="fa fa-cart-plus cart_size"></i> &nbsp; 
+                            <span class="badge badge-danger" style="margin-top:-30px;margin-left:-10px;">0</span><p>Shopping cart</p>
                         </div>
                     </div>
                 </div>
@@ -195,7 +134,9 @@ use App\Models\Order;
             <li><a href="#!">Category name</a></li>
         </ul>
       </li>
+      
       <li><a href="{{url('/')}}">New ArivalProducts</a></li>
+    
       <li><a href="#!">Customer Services</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Branches &nbsp;
@@ -204,32 +145,123 @@ use App\Models\Order;
             <li><a href="#!">branch name</a></li>
         </ul>
       </li>
-      @auth('customer')
-      <li><a href="{{url('/customer/dashboard')}}">New ArivalProducts</a></li>
-      @endauth
+      
     </ul>
   </div>
 </nav>
 <!-- End menu bar -->
 
-<!----- Start Slider (or) Banner ------>
-@auth('customer')
-@else
-<div class="row">
-    <div class="slider" style="background:url(../images/slider.jpg)">
-       <div class="slider-padding">
-            <div style="padding-top:30px;"><a href="https://play.google.com/store/apps/" target="parent" class="btn"><i class="fa fa-android"></i>&nbsp;get our android app</a></div>
-       </div>
-    </div>
-</div>
-@endauth
-
- <!----- End Slider (or) Banner ------>
- <!-- start of mysidebar-->
-
- <!--end of sidebar-->
 <main>
-    @yield('content')
+                <br>
+                <br>
+                <br>
+    
+
+
+             <div id="loginform">
+                    <form action="{{route('adminLoginPost') }}" method="POST">
+                        {!! csrf_field() !!}
+
+                         @if(\Session::get('error'))
+                            <span style="color: red;">{{ \Session::get('error')}}</span>
+                        @endif
+                         
+                        <span style="color: red;"> @error('email') {{ $message }}@enderror</span>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" value="{{old('email')}}" placeholder="Email">
+                        
+                        </div>
+                        
+                        <span style="color: red;">@error('password') {{ $message }}@enderror</span>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                                   
+                        </div>
+
+                        <div class="row">
+                            
+                            <div class="col-md-4">
+                                <button type="submit" name="login" class="btn btn-primary btn-block" id="loginbtn">Login</button>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="float-right">Forgot password</a>
+                            </div>
+                            <div class="col-md-4">
+                            <a href="#" id="signup" onclick="showregisterformfn()">Create account .</a>
+                            </div>
+                        </div>      
+
+                    </form>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div id="registerform">
+                <form action="{{route('CustomerCreateAccount')}}" method="POST">
+                    {!! csrf_field() !!}
+
+                     @if(\Session::get('register_error'))
+                        <span class="text-danger">{{ \Session::get('register_error')}}</span>
+                     @endif
+                    <span class="text-danger"> @error('name') {{ $message }}@enderror</span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="name">
+                    </div>
+
+                    <span class="text-danger"> @error('email') {{ $message }}@enderror</span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" value="{{old('email')}}" placeholder="Email">
+                    
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <span style="color:red;">@error('password') {{ $message }}@enderror</span>                       
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password_confirmation" placeholder="Re_enter password">
+                        <span style="color:red;">@error('password_confirmation') {{ $message }}@enderror</span>                     
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <button type="submit" name="register" class="btn btn-primary" id="registerbtn">Register</button>
+                            <button type="submit" name="register" id="registerbtn" style="z-index: 99;">Cool</button>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="float-right" id="signin" onclick="showloginformfn()">Already have an account.</a>
+                        </div>
+                    </div>      
+
+                </form>
+
+                </div>
+
+    <script>
+
+        document.getElementById('registerform').style.display='none';
+
+        function showregisterformfn(){
+            document.getElementById('loginform').style.display='none';
+            document.getElementById('signup').style.display='none';  
+            document.getElementById('registerform').style.display='block';          
+        }
+
+        function showloginformfn(){
+            document.getElementById('loginform').style.display='block';
+            document.getElementById('signup').style.display='block';  
+            document.getElementById('registerform').style.display='none';          
+        }
+
+        $(document).ready(function() {
+          $('#loginbtn').on('click touchstart', function() {
+            window.location.href = "/url";
+          });
+        });
+    </script>
+
 </main>
 
 
@@ -284,7 +316,7 @@ use App\Models\Order;
     <div class="copyrights">
         <div class="col-md-12 col-sm-8 col-xs-12">
             <div class="copyrights-left">
-            &copy; <?php echo date('Y') ?>. All rights reserved by <a href="http://www.cremohair.com" target="_blank">Cremohair</a>.
+            &copy; <?php echo date('Y') ?>. All rights reserved by <a href="http://cremohair.herokuapp.com/" target="_blank">Cremohair</a>.
             </div>
         </div>
     </div>
