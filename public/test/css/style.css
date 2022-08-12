@@ -172,6 +172,19 @@ text-decoration:none; border-radius:3px; text-shadow:none; float:left;}
 font-variant:small-caps; font-size:23px; background:#EEE; 
 margin:15px 15px 0px; padding:8px 15px; border:1px solid #df001a;
 }
+
+#account_link a{
+	color: white;
+	background:#eb3d51;
+	padding:5px;
+	border-radius:30px;
+	text-decoration:none;
+}
+
+#account_link a:hover{
+	text-decoration:none;
+}
+
  .content-right-product img{
     max-height:200px;
     overflow: auto;
