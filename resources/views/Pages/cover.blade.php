@@ -157,7 +157,7 @@ use App\Models\Order;
                                 </div>
                             @else
                                 <i class="fa fa-cart-plus cart_size"></i> &nbsp; 
-                                <span class="badge badge-danger" style="margin-top:-30px;margin-left:-10px;">0</span><p>Shopping cart</p>
+                                <span class="badge badge-danger" style="margin-top:-30px;margin-left:-10px;">0</span><p>Shopping cart/Orders</p>
                             @endauth
                         </div>
                     </div>

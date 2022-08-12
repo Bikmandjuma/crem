@@ -26,7 +26,7 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::get('/pages', function () {
-    return view('test');
+    return view('Pages.hint');
 });
 Route::get('/','webProductController@showtocustomer');
 
