@@ -5,7 +5,7 @@
                 <div class="content-right">
                 
                 @foreach($item as $product)
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="content-right-product">
                             <div><img src="images/product/{{$product->image}}" class="img-responsive" alt="Top Shoes"></div>
                             <div class="row">
