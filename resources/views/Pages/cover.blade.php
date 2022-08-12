@@ -103,9 +103,9 @@ use App\Models\Order;
 <div class="row main_header">
     <div class="col-md-3 col-sm-3 col-xs-12 logo" align="center">
         @auth('customer')
-        <a href="http://www.freetimelearning.com/" target="_blank"><img src="{{URL::to('/')}}/images/logo.png" class="img-responsive" alt="Logo"></a>               
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="{{URL::to('/')}}/images/logo.png" class="img-responsive" alt="Logo"></a>               
         @else
-        <a href="http://www.freetimelearning.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>                   
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>                   
         @endauth
     </div>
     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -139,7 +139,7 @@ use App\Models\Order;
                                 <span class=""><i class="fa fa-user"></i>&nbsp;Hello,&nbsp;<b>{{auth()->guard('customer')->user()->name}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-lock"></i>&nbsp;<a href="{{route('customerlogout')}}">Logout</a></span>  
                             @else
                                 <ul>
-                                    <li  align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i> Login / Sign up</a></li>
+                                    <li  align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i>&nbsp;&nbsp;Account</a></li>
                                 </ul>
                             @endauth
                         </div>
