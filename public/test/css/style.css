@@ -186,13 +186,12 @@ margin:15px 15px 0px; padding:8px 15px; border:1px solid #df001a;
 }
 
  .content-right-product img{
+    max-height:100%;
     max-height:200px;
     overflow: auto;
     display: block; /* remove extra space below image */
  }
 .content-right-product{ 
-width: 280px;
-height: 340px;
 padding:0px 5px;margin-left:5px; margin-top:15px;margin-bottom:15px; float:left;
  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3) !important; 
  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3) !important;

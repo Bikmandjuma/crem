@@ -139,7 +139,7 @@ use App\Models\Order;
                                 <span class=""><i class="fa fa-user"></i>&nbsp;Hello,&nbsp;<b>{{auth()->guard('customer')->user()->name}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-lock"></i>&nbsp;<a href="{{route('customerlogout')}}">Logout</a></span>  
                             @else
                                 <ul>
-                                    <li style="margin-left:30px;"  align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i>&nbsp;Account</a></li>
+                                    <li align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i>&nbsp;Account</a></li>
                                 </ul>
                             @endauth
                         </div>
@@ -216,7 +216,7 @@ use App\Models\Order;
 <!-- End menu bar -->
 
 <!----- Start Slider (or) Banner ------>
-@auth('customer')
+<!-- @auth('customer')
 @else
 <div class="row">
     <div class="slider" style="background:url(../images/slider.jpg)">
@@ -225,7 +225,7 @@ use App\Models\Order;
        </div>
     </div>
 </div>
-@endauth
+@endauth -->
 
  <!----- End Slider (or) Banner ------>
  <!-- start of mysidebar-->
