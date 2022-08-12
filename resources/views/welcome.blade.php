@@ -53,20 +53,16 @@
                         
                         <span style="color: red;">@error('password') {{ $message }}@enderror</span>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                                                   
+                            <input type="password" class="form-control" name="password" placeholder="Password">                     
                         </div>
 
                         <div class="row">
-                            
-                            <div class="col-md-4">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-2">
                                 <button type="submit" name="login" class="btnauth btn-primary" id="loginbtn">Login</button>
                             </div>
-                            <div class="col-md-4">
-                                <a href="#" class="float-right">Forgot password</a>
-                            </div>
-                            <div class="col-md-4">
-                            <a href="#" id="signup" onclick="showregisterformfn()">Create account .</a>
+                            <div class="col-md-6">
+                                <a href="#" class="float-right">Forgot password</a>&nbsp;&nbsp;&nbsp;<a href="#" id="signup" onclick="showregisterformfn()">Create account .</a>
                             </div>
                         </div>      
 

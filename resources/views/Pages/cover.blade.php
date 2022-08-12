@@ -5,6 +5,7 @@ use App\Models\Order;
 <html>
 <head>
     <title>Cremohair e-commerse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/test/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/test/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/test/css/font-awesome.min.css" />

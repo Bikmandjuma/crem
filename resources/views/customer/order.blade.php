@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\DB;
     @if($count_order == 0)
     <br>
     <div class="row">
-     <div class="col-lg-12 col-md-3 col-sm-4 col-xs-12">
+     <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12">
         <div class="categories text-center">Your cremohair cart is empty</div>
             <div class="content-right-product_order" style="overflow: auto;text-align: center;">
                 <div class="row">
-                    <div class="col-lg-12 col-md-3 col-sm-4 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12">
                         <a href="{{url('customer/dashboard')}}"><button class="btn">Shop now</button></a>
                         <table class="table table-striped table-bordered">
                             <thead>
