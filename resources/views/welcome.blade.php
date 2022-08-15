@@ -7,7 +7,7 @@
                 @foreach($item as $product)
                      <div class="items product">
                          <div class="img">
-                         <img src="http://localhost:8000/images/product/{{$product->image}}" alt="gel image"></div>
+                         <img src="http://cremohair.herokuapp.com/images/product/{{$product->image}}" alt="gel image"></div>
                          <br>
                          <div class="under_img">
                              <div class="row">
