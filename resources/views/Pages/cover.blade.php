@@ -220,7 +220,7 @@ use App\Models\Order;
 @auth('customer')
 @else
 <div class="row">
-    <div class="slider" style="background:url(http://cremohair.herokuapp.com/images/slider.jpg)">
+    <div class="slider" style="background:url(public/images/slider.jpg)">
        <div class="slider-padding">
             <div style="padding-top:30px;"><a href="https://play.google.com/store/apps/" target="parent" class="btn"><i class="fa fa-android"></i>&nbsp;android app</a></div>
        </div>
