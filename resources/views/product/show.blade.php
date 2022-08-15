@@ -28,7 +28,7 @@
 					@foreach($products as $product)
 					<tr>
 						<td>
-					        <img src="http://cremohair.herokuapp.com/public/images/product/{{$product->image}}" style="width:50px;height:50px;">
+					        <img src="public/images/product/{{$product->image}}" style="width:50px;height:50px;">
 					    </td>
 					    
 					    <td>
