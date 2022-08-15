@@ -4,26 +4,30 @@
             <div class="categories-right">All Products</div>
                 <div class="content-right">
 
-                @foreach($item as $product)
-                     <div class="items product">
-                         <div class="img">
-                         <img src="http://cremohair.herokuapp.com/images/product/{{$product->image}}" alt="gel image"></div>
-                         <br>
-                         <div class="under_img">
-                             <div class="row">
-                                 <p><b>{{$product->name}}</b>&nbsp;&nbsp;&nbsp;{{$product->store}} items</p>
-                             </div>
-                             <div class="row">
-                                <div class="col-sm-6" id="divs">
-                                    {{$product->price}} frw
-                                </div>
-                                <div class="col-sm-6" id="divs">
-                                    <p id="add_cart" data-toggle="modal" data-target=".login-register-form">add cart</p>
-                                </div>
+                <div class="row">
+                    @foreach($item as $product)
+                        <div class="col-sm-2">
+                         <div class="items product">
+                             <div class="img">
+                             <img src="http://cremohair.herokuapp.com/images/product/{{$product->image}}" alt="gel image"></div>
+                             <br>
+                             <div class="under_img">
+                                 <div class="row">
+                                     <p><b>{{$product->name}}</b>&nbsp;&nbsp;&nbsp;{{$product->store}} items</p>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col-sm-6" id="divs">
+                                        {{$product->price}} frw
+                                    </div>
+                                    <div class="col-sm-6" id="divs">
+                                        <p id="add_cart" data-toggle="modal" data-target=".login-register-form">add cart</p>
+                                    </div>
+                                 </div>
                              </div>
                          </div>
-                     </div>
-                @endforeach
+                        </div>
+                    @endforeach
+                </div>
                 <br>
                 <div class="row">
                     <div class="col-sm-12 text-center">
