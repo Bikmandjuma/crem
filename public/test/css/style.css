@@ -42,7 +42,7 @@ padding:8px 10px; border-radius:100px; text-align:center;}
 .header-top ul li a:hover{ background:#bb0016; color:#FFF;}
 
 .header-right-bottom{ list-style:none;}
-.header-right-bottom ul{list-style:none; margin:0px; padding-left:100px}
+.header-right-bottom ul{list-style:none; margin:0px; padding-left:50px}
 .header-right-bottom ul li{ list-style:none; font-family:arial; font-size:12px; padding:5px 0px; 
 margin:10px 0px; float:left; font-weight:bold;}
 .header-right-bottom ul li a{ padding:5px 10px; border-radius:3px;

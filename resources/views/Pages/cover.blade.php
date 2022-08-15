@@ -140,7 +140,7 @@ use App\Models\Order;
                                 <span class=""><i class="fa fa-user"></i>&nbsp;Hello,&nbsp;<b>{{auth()->guard('customer')->user()->name}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-lock"></i>&nbsp;<a href="{{route('customerlogout')}}">Logout</a></span>  
                             @else
                                 <ul>
-                                    <li style="margin-left:-50;" align="center" data-toggle="modal" data-target=".login-register-form"><a href="#"><i class="fa  fa-user"></i>&nbsp;SignIn/SignUp</a></li>
+                                    <li  align="center" data-toggle="modal" data-target=".login-register-form"><a href="#"><i class="fa  fa-user"></i>&nbsp;Sign In / Sign Up</a></li>
                                 </ul>
                             @endauth
                         </div>
