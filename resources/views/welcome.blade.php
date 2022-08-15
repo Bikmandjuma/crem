@@ -9,7 +9,7 @@
                         <div class="col-sm-2">
                          <div class="items product">
                              <div class="img">
-                             <img src="public/images/product/{{$product->image}}" alt="gel image"></div>
+                             <img src="images/product/{{$product->image}}" alt="gel image"></div>
                              <br>
                              <div class="under_img">
                                  <div class="row">

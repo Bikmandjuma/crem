@@ -61,6 +61,11 @@ class webCustomerController extends Controller
 		return view('customer.index',compact('item'));
 	}
 
+    public function CustomersList(){
+        $customer=CustomerAccount::paginate(10);
+        return view('customer.lists',compact('customer'));
+    }
+
     public function booking($id,$price){
         $cust_id=auth()->guard('customer')->user()->id;
         $one=1;

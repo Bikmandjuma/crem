@@ -214,9 +214,9 @@
 
 
               <li class="nav-item">
-                <a href="{{url('sliders')}}" class="nav-link">
+                <a href="{{route('customerslists')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sliders</p>
+                  <p>Customers</p>
                 </a>
               </li>
 

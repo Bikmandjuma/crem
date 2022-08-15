@@ -104,9 +104,9 @@ use App\Models\Order;
 <div class="row main_header">
     <div class="col-md-3 col-sm-3 col-xs-12 logo" align="center">
         @auth('customer')
-        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="http://cremohair.herokuapp.com/images/logo.png" class="img-responsive" alt="Logo"></a>               
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>               
         @else
-        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="http://cremohair.herokuapp.com/images/logo.png" class="img-responsive" alt="Logo"></a>                   
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>                   
         @endauth
     </div>
     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -220,7 +220,7 @@ use App\Models\Order;
 @auth('customer')
 @else
 <div class="row">
-    <div class="slider" style="background:url(public/images/slider.jpg)">
+    <div class="slider" style="background:url(images/slider.jpg)">
        <div class="slider-padding">
             <div style="padding-top:30px;"><a href="https://play.google.com/store/apps/" target="parent" class="btn"><i class="fa fa-android"></i>&nbsp;android app</a></div>
        </div>

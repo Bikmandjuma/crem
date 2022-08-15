@@ -95,6 +95,9 @@ Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
 	//delete product
 	Route::get('/product/delete/{id}', 'webProductController@destroy');
 
+	//list of customers
+	Route::get('/customer/list','webCustomerController@CustomersList')->name('customerslists');
+
 });
 
 //customer form register
