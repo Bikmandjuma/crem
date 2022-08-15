@@ -70,11 +70,11 @@ use Illuminate\Support\Facades\DB;
                             </thead>
                             @foreach($data as  $item)
                             <tr>
-                                <td><img src="{{asset('/images/product/'.$item->image)}}" style="width: 30px;height:50px;"></a></td>
+                                <td><img src="http://cremohair.herokuapp.com/images/product/{{$item->image)}}" style="width: 30px;height:50px;"></a></td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->product_counts}}</td>
                                 <td>{{$item->price}}&nbsp;Frw</td>
-                                <td class="text-center"><a href="{{url('customer/cancel/order')}}/{{$item->id}}" onclick="return confirm('Do want to cancel this order ?')"> <button class="btn">Cancel order</button></a></td>
+                                <td class="text-center"><a href="{{url('customer/cancel/order')}}/{{$item->id}}" onclick="return confirm('Do want to cancel this order ?')"> <button class="btn"><span style="background-attachment:red;color: white;">&times;</span></button></a></td>
                             </tr>
                             @endforeach
                         </table>

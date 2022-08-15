@@ -6,6 +6,7 @@ use App\Models\Order;
 <head>
     <title>Cremohair e-commerse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta refresh="5">
     <link rel="stylesheet" type="text/css" href="/test/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/test/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/test/css/font-awesome.min.css" />
@@ -103,9 +104,9 @@ use App\Models\Order;
 <div class="row main_header">
     <div class="col-md-3 col-sm-3 col-xs-12 logo" align="center">
         @auth('customer')
-        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="{{URL::to('/')}}/images/logo.png" class="img-responsive" alt="Logo"></a>               
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="http://cremohair.herokuapp.com/images/logo.png" class="img-responsive" alt="Logo"></a>               
         @else
-        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>                   
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="http://cremohair.herokuapp.com/images/logo.png" class="img-responsive" alt="Logo"></a>                   
         @endauth
     </div>
     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -139,7 +140,7 @@ use App\Models\Order;
                                 <span class=""><i class="fa fa-user"></i>&nbsp;Hello,&nbsp;<b>{{auth()->guard('customer')->user()->name}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-lock"></i>&nbsp;<a href="{{route('customerlogout')}}">Logout</a></span>  
                             @else
                                 <ul>
-                                    <li style="margin-left:-50px;" align="center" data-toggle="modal" data-target="#login_model"><a href="#"><i class="fa  fa-user"></i>&nbsp;Account</a></li>
+                                    <li style="margin-left:0;" align="center" data-toggle="modal" data-target=".login-register-form"><a href="#"><i class="fa  fa-user"></i>&nbsp;Account</a></li>
                                 </ul>
                             @endauth
                         </div>
@@ -216,16 +217,16 @@ use App\Models\Order;
 <!-- End menu bar -->
 
 <!----- Start Slider (or) Banner ------>
-<!-- @auth('customer')
+@auth('customer')
 @else
 <div class="row">
-    <div class="slider" style="background:url(../images/slider.jpg)">
+    <div class="slider" style="background:url(http://cremohair.herokuapp.com/images/slider.jpg)">
        <div class="slider-padding">
-            <div style="padding-top:30px;"><a href="https://play.google.com/store/apps/" target="parent" class="btn"><i class="fa fa-android"></i>&nbsp;get our android app</a></div>
+            <div style="padding-top:30px;"><a href="https://play.google.com/store/apps/" target="parent" class="btn"><i class="fa fa-android"></i>&nbsp;android app</a></div>
        </div>
     </div>
 </div>
-@endauth -->
+@endauth
 
  <!----- End Slider (or) Banner ------>
  <!-- start of mysidebar-->
