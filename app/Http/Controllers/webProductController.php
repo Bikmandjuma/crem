@@ -51,7 +51,7 @@ class webProductController extends Controller
     //show a all products in store
     function showtocustomer(){
         
-        $item=product::paginate(6);
+        $item=product::paginate(12);
         return view('welcome',compact('item'));
 
     }

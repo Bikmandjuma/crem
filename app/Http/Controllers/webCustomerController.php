@@ -57,7 +57,7 @@ class webCustomerController extends Controller
     }
 
     public function dashboard(){
-        $item=product::paginate(6);
+        $item=product::paginate(12);
 		return view('customer.index',compact('item'));
 	}
 
