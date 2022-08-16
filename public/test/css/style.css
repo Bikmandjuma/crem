@@ -260,8 +260,8 @@ box-shadow: 0 0 10px rgba(0,0,0,0.5);
 .items{
 background-color: rgba(255, 255, 255, 0.8);
 border-radius: 5px;
-width: 200px;
-height: 250px;
+width: 180px;
+height: 260px;
 text-align: center;
 padding: 60px 0;
 margin: 5px;
@@ -279,7 +279,7 @@ box-shadow: 0 0 5px rgba(0,0,0,0.5);
 .items .under_img{
 	background-color:#eb3d51;
 	color: white;
-	height:68px;
+	height:78px;
 }
 #add_cart{
 	width:70px;
@@ -298,6 +298,25 @@ box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	color:#eb3d51;
 	text-decoration: none;
 }
+
+#add_to_cart{
+	width:70px;
+	background: white;
+	color:#eb3d51;
+	padding: 3px;
+	border-radius:10px;
+}
+
+#add_to_cart a{
+	color:#eb3d51;
+	text-decoration: none;
+}
+
+#add_to_cart a:hover{
+	color:#eb3d51;
+	text-decoration: none;
+}
+
 
 .items .row #divs{
 	display: inline-block;
@@ -333,4 +352,9 @@ box-shadow: 0 0 5px rgba(0,0,0,0.5);
   margin-bottom: 10px;
 }
 
+
+/*css of customer basket link*/
+#your_order_link a:hover{
+	color:white;
+}
 

@@ -6,10 +6,10 @@
 
                 <div class="row">
                     @foreach($item as $product)
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
                          <div class="items product">
                              <div class="img">
-                             <img src="images/product/{{$product->image}}" alt="gel image"></div>
+                             <img src="{{URL::to('/')}}/images/product/{{$product->image}}" alt="gel image"></div>
                              <br>
                              <div class="under_img">
                                  <div class="row">
@@ -17,7 +17,7 @@
                                  </div>
                                  <div class="row">
                                     <div class="col-sm-6" id="divs">
-                                        {{$product->price}} frw
+                                        {{$product->price}}frw
                                     </div>
                                     <div class="col-sm-6" id="divs">
                                         <p id="add_cart" data-toggle="modal" data-target=".login-register-form">add cart</p>

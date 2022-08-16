@@ -104,9 +104,9 @@ use App\Models\Order;
 <div class="row main_header">
     <div class="col-md-3 col-sm-3 col-xs-12 logo" align="center">
         @auth('customer')
-        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>               
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="{{URL::to('/')}}/images/logo.png" class="img-responsive" alt="Logo"></a>               
         @else
-        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="images/logo.png" class="img-responsive" alt="Logo"></a>                   
+        <a href="http://cremohair.herokuapp.com/" target="_blank"><img src="{{URL::to('/')}}/images/logo.png" class="img-responsive" alt="Logo"></a>                   
         @endauth
     </div>
     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -202,14 +202,18 @@ use App\Models\Order;
       @else
       <li><a href="{{url('/')}}">New ArivalProducts</a></li>
       @endauth
-      <li><a href="#!">Customer Services</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Branches &nbsp;
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="#!">branch name</a></li>
-        </ul>
-      </li>
+      <!-- <li><a href="#!">Customer Services</a></li> -->
+      @auth('customer')
+        <li style="color: white;" id="your_order_link"><a href="{{route('ViewOrder')}}"><i class="fa fa-shopping-basket"></i>&nbsp;Your order</a></li>
+      @else
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Branches &nbsp;
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#!">branch name</a></li>
+          </ul>
+        </li>
+      @endauth
       
     </ul>
   </div>
