@@ -10,6 +10,8 @@ use Auth;
 use paginate;
 use Session;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class webProductController extends Controller
 {
@@ -69,12 +71,16 @@ class webProductController extends Controller
 
             $product=new product;
             $product->name = $request->name;
-
+            
             if($request->hasFile('image')){
-                $file= $request->file('image');
-                $filename= date('YmdHi').$file->getClientOriginalName();
-                $file-> move(public_path('images/product'), $filename);
-                $product['image']=$filename;
+                $file = $request->file('image');
+                $path='images/';
+                $fileName = time().$file->getClientOriginalName();
+                Storage::disk('public')->put($path . $fileName, File::get($file));
+                $file_name  = $file->getClientOriginalName();
+                $file_type  = $file->getClientOriginalExtension();
+                $filePath   = 'storage/'.$path . $fileName;
+                $product['image']=$fileName;
             }
                 
             $product->description = $request->description;
