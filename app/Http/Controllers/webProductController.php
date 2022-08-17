@@ -46,7 +46,7 @@ class webProductController extends Controller
 
     //show a all products in store
     function show(){
-        $products=product::all();
+        $products=product::paginate(10);
         return view('product.show',compact('products'));
     }
 
@@ -71,16 +71,12 @@ class webProductController extends Controller
 
             $product=new product;
             $product->name = $request->name;
-            
+
             if($request->hasFile('image')){
-                $file = $request->file('image');
-                $path='images/';
-                $fileName = time().$file->getClientOriginalName();
-                Storage::disk('public')->put($path . $fileName, File::get($file));
-                $file_name  = $file->getClientOriginalName();
-                $file_type  = $file->getClientOriginalExtension();
-                $filePath   = 'storage/'.$path . $fileName;
-                $product['image']=$fileName;
+                $file= $request->file('image');
+                $filename= date('YmdHi').$file->getClientOriginalName();
+                $file-> move(public_path('images/product/'), $filename);
+                $product['image']= $filename;
             }
                 
             $product->description = $request->description;
@@ -88,7 +84,7 @@ class webProductController extends Controller
             $product->store = $request->store;
             $product->save();
 
-            return back()->with('addproduct','New item added !'); 
+            return back()->with('addproduct','New products added !'); 
             
     }
 

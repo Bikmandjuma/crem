@@ -70,7 +70,7 @@ use Illuminate\Support\Facades\DB;
                             </thead>
                             @foreach($data as  $item)
                             <tr>
-                                <td><img src="{{asset('storage/images/'.$item->image)}}" style="width: 30px;height:50px;"></a></td>
+                                <td><img src="{{asset('images/product/'.$item->image)}}" style="width: 30px;height:50px;"></a></td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->product_counts}}</td>
                                 <td>{{$item->price}}&nbsp;Frw</td>

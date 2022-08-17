@@ -8,7 +8,7 @@
                 @foreach($item as $product)
                   <div class="col-sm-2">
                      <div class="items product">
-                         <div class="img"><img src="{{asset('storage/images/'.$product->image)}}" alt="gel image"></div>
+                         <div class="img"><img src="{{asset('images/product/'.$product->image)}}" alt="gel image"></div>
                          <br>
                          <div class="under_img">
                              <div class="row">
