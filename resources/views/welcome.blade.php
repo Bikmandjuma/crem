@@ -3,13 +3,13 @@
         <div class="row" align="center">
             <div class="categories-right">All Products</div>
                 <div class="content-right">
-
                 <div class="row">
                     @foreach($item as $product)
                         <div class="col-md-2">
                          <div class="items product">
                              <div class="img">
-                             <img src="{{asset('storage/images/'.$product->image)}}" alt="gel image"></div>
+                                <img src="{{asset('storage/images/'.$product->image)}}" alt="gel image">
+                             </div>
                              <br>
                              <div class="under_img">
                                  <div class="row">
@@ -75,19 +75,15 @@
                                         </div>
                                         <span class="text-danger"> @error('password') {{ $message }}@enderror</span>
                                     </div>
-                                    <!-- <div class="checkbox">
-                                        <label><input type="checkbox" name="remember"> Remember me</label>
-                                    </div> -->
                                     <button type="submit" class="btn btn-default">Login</button>
                                     <br>
-                                    <div class="text-center"><a href="#forgot-passowrd">Forgot passowrd</a></div>
+                                    <div class="text-center"><a href="#forgot-passowrd">Forgot passward</a></div>
                                     <br>
                                 </form>
                             </div>
                             <div id="registration-form" class="tab-pane fade">
                                 <form action="{{route('CustomerCreateAccount')}}" method="POST">
                                     {!! csrf_field() !!}
-
                                     @if(\Session::get('register_error'))
                                         <span class="text-danger">{{ \Session::get('register_error')}}</span>
                                     @endif
