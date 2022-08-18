@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\DB;
             <div class="content-right-product_order" style="overflow: auto;text-align: center;">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12">
-                        <a href="{{url('customer/dashboard')}}"><button class="btn">Shop now</button></a>
                         <table class="table table-striped table-bordered">
                             <thead>
                                <tr>
@@ -30,7 +29,7 @@ use Illuminate\Support\Facades\DB;
                             </thead>
                             
                             <tr>
-                                <td colspan="4">No product found !</td>
+                                <td colspan="4">No product found in your cart !</td>
                             </tr>
                         </table>
                     </div>
@@ -45,9 +44,15 @@ use Illuminate\Support\Facades\DB;
         $data= DB::table('orders')
             ->join('products', 'products.id', '=', 'orders.product_id')
             ->join('customer_accounts', 'customer_accounts.id', '=', 'orders.customer_id')
-            ->select('orders.*', 'products.name', 'products.price','orders.product_counts', 'products.image','orders.id')
+            ->select('orders.*', 'products.name','products.price', 'orders.amount','orders.product_counts', 'products.image','orders.id')
             ->where(['customer_accounts.id'=>$cust_id])
-            ->get();        
+            ->paginate(5);
+
+        $customer_id=auth()->guard('customer')->user()->id;
+        
+        $total_amount_checkout=Order::where('customer_id',1)->where('payment_checkout','')->sum('amount');
+        $total_product_to_buy=Order::where('customer_id',1)->where('payment_checkout','')->sum('product_counts');
+
     ?>
 
     <div class="row">
@@ -56,34 +61,62 @@ use Illuminate\Support\Facades\DB;
             <div class="content-right-product_order" style="overflow: auto;text-align: center;">
                 <div class="row">
                     <div class="col-lg-12 col-md-3 col-sm-4 col-xs-12">
-                        <a href="{{url('customer/dashboard')}}"><button class="btn">Shop now</button></a>
-
                         <table class="table table-striped table-bordered">
                             <thead>
                                <tr>
                                     <th>PRODUCT</th>
                                     <th>DESCRIPTION</th>
                                     <th>QUANTITY</th>
-                                    <th>PRICE</th>
-                                    <th>Cancel</th>
+                                    <th>PRICE / QTY</th>
+                                    <th>PRICE TOTAL</th>
+                                    <th>Cancel Order</th>
                                 </tr> 
                             </thead>
                             @foreach($data as  $item)
                             <tr>
-                                <td><img src="{{asset('images/product/'.$item->image)}}" style="width: 30px;height:50px;"></a></td>
+                                <td><img src="{{URL::asset('/images/product/'.$item->image)}}" style="width: 30px;height:50px;"></a></td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->product_counts}}</td>
-                                <td>{{$item->price}}&nbsp;Frw</td>
-                                <td class="text-center"><a href="{{url('customer/cancel/order')}}/{{$item->id}}" onclick="return confirm('Do want to cancel this order ?')"> <button class="btn"><span style="background-attachment:red;color: white;">&times;</span></button></a></td>
+                                <td>{{$item->price}} frw</td>
+                                <td><b>{{$item->amount}}&nbsp;Frw</b></td>
+                                <td class="text-center"><a href="{{url('customer/cancel/order')}}/{{$item->id}}" onclick="return confirm('Do want to cancel this order ?')"> <button class="cancel_order_btn">Cancel</span></button></a></td>
                             </tr>
                             @endforeach
+                            <tr>
+                                <td colspan="2"><strong>TOTAL</strong></td>
+                                <td><strong>{{$total_product_to_buy}}</strong> </td>
+                                <td></td>
+                                <td><strong>{{$total_amount_checkout}} frw</strong></td>
+                                <td><button class="Checkout-btn">Checkout</button> </td>
+                            </tr>
                         </table>
                     </div>
                 </div>
             </div>
       </div>
+
+                <!--start of paginate divs-->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        {{$data->links()}}
+                    </div>
+                </div>
+                <!--end of paginate divs-->
     @endif
     <br>
     <br>
     <br>
+
+        <script>
+              $(document).ready(function() {
+                  toastr.options.timeOut = 8000;
+                  @if (Session::has('Order_cancelled'))
+                      toastr.error('{{ Session::get('Order_cancelled') }}');
+                  @endif
+              });
+
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 @endsection

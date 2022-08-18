@@ -356,3 +356,20 @@ box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	color:white;
 }
 
+.Checkout-btn{
+	background-color:green;
+	color: white;
+	padding:3px;
+	border-radius:10px;
+	border:5px solid green;
+
+}
+
+.cancel_order_btn{
+	background-color: #eb3d51;
+	color: white;
+	padding:5px;
+	border-radius:10px;
+	border:5px solid #eb3d51;
+}
+

@@ -10,6 +10,10 @@ use App\Models\Order;
     <link rel="stylesheet" type="text/css" href="/test/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/test/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/test/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -89,11 +93,11 @@ use App\Models\Order;
        </div>
      </div>
      <br>
-     <div class="row">
+     <!-- <div class="row">
        <div class="col-md-12 text-center">
           <a href="#"><button class="btn btn-danger text-white">PAY NOW</button></a>
        </div>
-     </div>
+     </div> -->
   @endif
 @endauth
 </div>
@@ -154,7 +158,7 @@ use App\Models\Order;
                                     $count_order=collect($orders)->count();
                                 ?>
                                 <div class="openbtn" onclick="openNav()">
-                                    <a href="#"><i class="fa fa-cart-plus cart_size"></i> &nbsp;
+                                    <a href="#"><i class="fa fa-shopping-basket cart_size"></i> &nbsp;
                                     <span class="badge badge-danger" style="margin-top:-30px;margin-left:-10px;"><?php echo $count_order;?></span><p><i class="fa fa-hand-o-right fa-2x" aria-hidden="true" id="clicktoorder"></i>Shopping cart/Orders</p></a>
                                 </div>
                             @else
@@ -185,7 +189,11 @@ use App\Models\Order;
      </div>
     <div id="navbarCollapse" class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
+      @auth('customer')
+      <li> <a href="{{url('/customer/dashboard')}}">Buy now</a></li>
+      @else
       <li> <a href="{{url('/')}}">Home</a></li>
+      @endauth
       <li><a href="#!">Men's gel</a></li>
       <li><a href="#!">Women's gel</a></li>
       <li><a href="#!">kid's gel</a></li>
@@ -204,7 +212,7 @@ use App\Models\Order;
       @endauth
       <!-- <li><a href="#!">Customer Services</a></li> -->
       @auth('customer')
-        <li style="color: white;" id="your_order_link"><a href="{{route('ViewOrder')}}"><i class="fa fa-shopping-basket"></i>&nbsp;Your order</a></li>
+        <li style="color: white;" id="your_order_link"><a href="{{route('ViewOrder')}}"><i class="fa fa-shopping-basket"></i>&nbsp;Your order <span class="">{{$count_order}}</span></a></li>
       @else
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Branches &nbsp;
