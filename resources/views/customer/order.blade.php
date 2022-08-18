@@ -50,8 +50,8 @@ use Illuminate\Support\Facades\DB;
 
         $customer_id=auth()->guard('customer')->user()->id;
         
-        $total_amount_checkout=Order::where('customer_id',1)->where('payment_checkout','')->sum('amount');
-        $total_product_to_buy=Order::where('customer_id',1)->where('payment_checkout','')->sum('product_counts');
+        $total_amount_checkout=Order::where('customer_id',$customer_id)->where('payment_checkout','')->sum('orders.amount');
+        $total_product_to_buy=Order::where('customer_id',$customer_id)->where('payment_checkout','')->sum('orders.product_counts');
 
     ?>
 
