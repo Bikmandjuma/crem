@@ -3,7 +3,7 @@
 <br>
 <div class="row">
 	<div class="col-md-3"></div>
-	<div class="col-md-6">
+	<div class="col-md-6" style="overflow: auto;">
 			@if(session('delete'))
 	            <div class="alert fade show text-center text-white" role="alert" style="background-color:red;color: white;font-size:15px;">
 	                {{session('delete') }}
