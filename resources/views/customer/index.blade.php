@@ -7,7 +7,7 @@
                 @foreach($item as $product)
                   <div class="col-sm-2">
                      <div class="items product">
-                         <div class="img"><img src="{{URL::to('/')}}/images/product/{{$product->image}}" alt="gel image" onerror="this.src='images/notfound.jpeg';"></div>
+                         <div class="img"><img src="{{URL::to('/')}}/images/product/{{$product->image}}" alt="gel image" ></div>
                          <br>
                          <div class="under_img">
                              <div class="row">

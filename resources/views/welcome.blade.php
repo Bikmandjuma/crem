@@ -8,7 +8,7 @@
                         <div class="col-md-2">
                          <div class="items product">
                              <div class="img">
-                                <img src="{{URL::to('/')}}/images/product/{{$product->image}}" alt="gel image" onerror="this.src='images/notfound.jpeg';">
+                                <img src="{{URL::to('/')}}/images/product/{{$product->image}}" alt="gel image" onerror="this.src='images/notfound.png';">
                              </div>
                              <br>
                              <div class="under_img">
