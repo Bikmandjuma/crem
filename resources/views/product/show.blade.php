@@ -28,7 +28,7 @@
 					@foreach($products as $product)
 					<tr>
 						<td>
-					        <img src="{{URL::to('/')}}/images/product/{{$product->image}}" style="width:50px;height:50px;">
+					        <img src="{{URL::to('/')}}/images/product/{{$product->image}}" style="width:50px;height:50px;" onerror="this.src='images/notfound.jpeg';">
 					    </td>
 					    
 					    <td>

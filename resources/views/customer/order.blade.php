@@ -74,7 +74,7 @@ use Illuminate\Support\Facades\DB;
                             </thead>
                             @foreach($data as  $item)
                             <tr>
-                                <td><img src="{{URL::to('/')}}/images/product/{{$item->image}}" style="width: 30px;height:50px;"></a></td>
+                                <td><img src="{{URL::to('/')}}/images/product/{{$item->image}}" style="width: 30px;height:50px;" onerror="this.src='images/notfound.jpeg';"></a></td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->product_counts}}</td>
                                 <td>{{$item->price}} frw</td>
